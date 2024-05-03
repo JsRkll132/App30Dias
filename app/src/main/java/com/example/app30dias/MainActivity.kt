@@ -29,6 +29,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -52,6 +53,7 @@ import androidx.compose.ui.res.fontResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -115,7 +117,9 @@ fun listDays(listdats : List<DaysData>, modifier: Modifier = Modifier){
 @Composable
 fun DayCard(daycart: DaysData, modifier: Modifier = Modifier){
     val expandedState = remember { mutableStateOf(false) }
-    Card(
+    Card(colors = CardDefaults.cardColors(
+        containerColor = MaterialTheme.colorScheme.primary
+    ),
         modifier= modifier
         .graphicsLayer(scaleY = animateFloatAsState(if (expandedState.value) 1.1f else 1f).value)) {
         Column {
@@ -152,12 +156,14 @@ fun DayCard(daycart: DaysData, modifier: Modifier = Modifier){
             }
             if (expandedState.value
                 ) {
-                Text(
+                Text(color = Color.LightGray,
                     text = LocalContext.current.getString(daycart.content),
                     modifier = Modifier
                         .padding(start = 10.dp, bottom = 8.dp)
-                        .align(Alignment.Start) ,
-                    fontFamily = FontFamily(Font(R.font.poetsenone_regular, FontWeight.ExtraBold),
+                        .align(Alignment.Start)
+                    ,
+                    fontFamily = FontFamily(Font(R.font.poetsenone_regular, FontWeight.Light
+                    ,),
                     )// Añadir un espacio arriba para separar el texto de la imagen
                 )
             }
