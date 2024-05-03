@@ -1,4 +1,5 @@
-package com.example.compose
+package com.example.app30dias.ui.theme
+import com.example.compose.*
 import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -16,6 +17,11 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import com.example.compose.onPrimaryContainerLight
+import com.example.compose.onPrimaryLight
+import com.example.compose.primaryContainerLight
+import com.example.compose.primaryLight
+import com.example.ui.theme.AppTypography
 
 @Immutable
 data class ExtendedColorScheme(
@@ -281,7 +287,7 @@ val unspecified_scheme = ColorFamily(
 )
 
 @Composable
-fun AppTheme(
+fun App30diasTheme (
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
@@ -307,6 +313,7 @@ fun AppTheme(
 
   MaterialTheme(
     colorScheme = colorScheme,
+    typography = AppTypography,
     content = content
   )
 }
