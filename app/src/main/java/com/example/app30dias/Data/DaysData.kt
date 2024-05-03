@@ -16,7 +16,7 @@ data class DaysData(
 
 
 val datList = listOf(
-    DaysData(R.string.Day, R.string.day1subtitle, R.string.day1Content, 1, R.drawable.day1image),
+    DaysData(R.string.Day, R.string.day1subtitle, R.string.day1Content, 1,R.drawable.day1image),
     DaysData(R.string.Day, R.string.day2subtitle, R.string.day2Content, 2, R.drawable.day2image),
     DaysData(R.string.Day, R.string.day3subtitle, R.string.day3Content, 3, R.drawable.day3image),
     DaysData(R.string.Day, R.string.day4subtitle, R.string.day4Content, 4, R.drawable.day4image),
